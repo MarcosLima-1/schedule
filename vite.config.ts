@@ -1,4 +1,3 @@
-import { sentryVitePlugin } from "@sentry/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
@@ -28,13 +27,6 @@ export default defineConfig(({ mode }) => {
 			babel: {
 				plugins: [["babel-plugin-react-compiler"]],
 			},
-		}),
-		sentryVitePlugin({
-			url: env.VITE_SENTRY_URL,
-			authToken: env.VITE_SENTRY_AUTH_TOKEN,
-			org: env.VITE_SENTRY_ORG,
-			project: env.VITE_SENTRY_PROJECT,
-			telemetry: false,
 		}),
 	];
 
