@@ -1,0 +1,23 @@
+name: "production-react-template"
+
+include:
+  - ../services/docker-compose.yml
+
+services:
+  app:
+    ports:
+      - 5174:5173
+    build:
+      context: ../../
+      dockerfile: docker/prod/dockerfile
+      args:
+        VITE_BUILD_MODE: prod
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+        window: 30s
+      resources:
+        limits:
+          memory: 4g
