@@ -3,7 +3,7 @@ run-name: Registry & push - ${{ github.run_number }}
 
 on:
   workflow_run:
-    workflows: ["image-scan"]
+    workflows: ["integration-tests"]
     branches:
       - main
       - staging
