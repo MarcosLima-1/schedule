@@ -123,7 +123,7 @@ export function TaskForm({ defaultValues, taskId, onSuccess }: TaskFormProps) {
 				children={(AppField) => {
 					return (
 						<Field.Wrapper>
-							<Field.Label required>Responsáveis</Field.Label>
+							<Field.Label>Responsáveis</Field.Label>
 							<AppField.TagsField maxTagCount={5} maxTagLength={20} />
 							<Field.Error />
 						</Field.Wrapper>
